@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Search, Eye, Clock, User, MapPin, Filter, Download, RefreshCw, X } from 'lucide-react';
+import { Search, Eye, Clock, User, MapPin, Filter, Download, RefreshCw, X, Globe } from 'lucide-react';
 import { Card } from '../../components/ui/card';
 import { Input } from '../../components/ui/input';
 import { Button } from '../../components/ui/button';
@@ -41,7 +41,7 @@ interface TrackingHistory {
 }
 
 export function Tracking() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [typeFilter, setTypeFilter] = useState('all');
@@ -136,8 +136,20 @@ export function Tracking() {
     <div className="p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-semibold text-gray-900">{t('tracking.title')}</h1>
+          <h1 className="text-2xl font-semibold text-gray-800">{t('tracking.title')}</h1>
           <p className="text-gray-600 mt-1">{t('tracking.subtitle')}</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <select
+            value={i18n.language}
+            onChange={(e) => i18n.changeLanguage(e.target.value)}
+            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="mr">मराठी</option>
+          </select>
+          <Globe className="w-4 h-4 text-gray-500" />
         </div>
       </div>
 

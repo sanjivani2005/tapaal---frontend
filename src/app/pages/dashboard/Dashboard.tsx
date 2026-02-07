@@ -146,7 +146,7 @@ export function Dashboard() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-xl font-semibold text-gray-900">{t('dashboard.title')}</h1>
+          <h1 className="text-3xl font-bold text-gray-900 tracking-tight">{t('dashboard.title')}</h1>
           <p className="text-gray-500 mt-2 font-medium">{t('dashboard.subtitle')}</p>
         </div>
         <div className="flex items-center gap-3">

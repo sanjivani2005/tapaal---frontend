@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input, Button, Card, CardContent, CardHeader, CardTitle, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Textarea, Badge } from '../../components/ui';
-import { ArrowLeft, Building, User, Mail, Phone, MapPin, Users, Settings, Brain, AlertTriangle, TrendingUp } from 'lucide-react';
+import { ArrowLeft, Building, User, Mail, Phone, MapPin, Users, Settings, Brain, AlertTriangle, TrendingUp, Globe } from 'lucide-react';
 import { aiService } from '../../services/ai-service';
 import { apiService } from '../../../services/api-service';
 
@@ -11,7 +11,7 @@ interface CreateDepartmentProps {
 }
 
 export function CreateDepartment({ onBack, onDepartmentCreated }: CreateDepartmentProps) {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [departmentName, setDepartmentName] = useState('');
     const [departmentCode, setDepartmentCode] = useState('');
     const [departmentHead, setDepartmentHead] = useState('');
@@ -316,6 +316,21 @@ export function CreateDepartment({ onBack, onDepartmentCreated }: CreateDepartme
                 <div>
                     <h1 className="text-2xl font-semibold text-gray-800">{t('createDepartment.title')}</h1>
                     <p className="text-gray-500 text-sm">{t('createDepartment.subtitle')}</p>
+                </div>
+
+                {/* Language Selector */}
+                <div className="flex items-center gap-2">
+                    <Globe className="w-4 h-4 text-gray-600" />
+                    <Select value={i18n.language} onValueChange={(lang) => i18n.changeLanguage(lang)}>
+                        <SelectTrigger className="w-32">
+                            <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="en">English</SelectItem>
+                            <SelectItem value="hi">हिंदी</SelectItem>
+                            <SelectItem value="mr">मराठी</SelectItem>
+                        </SelectContent>
+                    </Select>
                 </div>
             </div>
 

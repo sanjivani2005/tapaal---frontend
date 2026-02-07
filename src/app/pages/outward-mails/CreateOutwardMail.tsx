@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input, Textarea, Button, Card, CardContent, CardHeader, CardTitle, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Label } from '../../components/ui';
-import { ArrowLeft, Save, UploadCloud, Calendar, User, Building, MapPin, DollarSign } from 'lucide-react';
+import { ArrowLeft, Save, UploadCloud, Calendar, User, Building, MapPin, DollarSign, Globe } from 'lucide-react';
 import { outwardMailService } from '../../../services/outward-mail-service';
 
 interface CreateOutwardMailProps {
@@ -165,6 +165,21 @@ export function CreateOutwardMail({ onBack, onRefresh }: CreateOutwardMailProps)
             <h1 className="text-2xl font-semibold text-gray-800">{t('createOutwardMail.title')}</h1>
             <p className="text-gray-500 text-sm">{t('createOutwardMail.subtitle')}</p>
           </div>
+        </div>
+
+        {/* Language Selector */}
+        <div className="flex items-center gap-2">
+          <Globe className="w-4 h-4 text-gray-600" />
+          <Select value={i18n.language} onValueChange={(lang) => i18n.changeLanguage(lang)}>
+            <SelectTrigger className="w-32">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="en">English</SelectItem>
+              <SelectItem value="hi">हिंदी</SelectItem>
+              <SelectItem value="mr">मराठी</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </div>
 

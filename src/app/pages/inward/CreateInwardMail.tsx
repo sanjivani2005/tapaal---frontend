@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input, Textarea, Button, Card, CardContent, CardHeader, CardTitle, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Label } from '../../components/ui';
-import { UploadCloud, Search, ArrowLeft, Send, Calendar, User, Building, Brain } from 'lucide-react';
+import { UploadCloud, Search, ArrowLeft, Send, Calendar, User, Building, Brain, Globe } from 'lucide-react';
 import { aiService, DuplicateResult, PriorityResult, DescriptionSuggestion, ContentSuggestion } from '../../services/ai-service';
 import { AIDuplicateAlert } from '../../components/ai/AIDuplicateAlert';
 import { AIPrioritySuggestion } from '../../components/ai/AIPrioritySuggestion';
@@ -287,6 +287,21 @@ export function CreateInwardMail({ onBack }: CreateInwardMailProps) {
                         <h1 className="text-2xl font-semibold text-gray-800">{t('createInwardMail.title')}</h1>
                         <p className="text-gray-500 text-sm">{t('createInwardMail.subtitle')}</p>
                     </div>
+                </div>
+
+                {/* Language Selector */}
+                <div className="flex items-center gap-2">
+                    <Globe className="w-4 h-4 text-gray-600" />
+                    <Select value={i18n.language} onValueChange={(lang) => i18n.changeLanguage(lang)}>
+                        <SelectTrigger className="w-32">
+                            <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="en">English</SelectItem>
+                            <SelectItem value="hi">हिंदी</SelectItem>
+                            <SelectItem value="mr">मराठी</SelectItem>
+                        </SelectContent>
+                    </Select>
                 </div>
             </div>
 

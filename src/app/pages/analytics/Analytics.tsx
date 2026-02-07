@@ -150,7 +150,7 @@ export default function Analytics() {
             {/* Header Section */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                    <h1 className="text-xl font-semibold text-gray-900">{t('analytics.title')}</h1>
+                    <h1 className="text-3xl font-bold text-gray-900 tracking-tight">{t('analytics.title')}</h1>
                     <p className="text-gray-500 font-medium">{t('analytics.subtitle')}</p>
                 </div>
                 <div className="flex items-center gap-3">
@@ -165,10 +165,10 @@ export default function Analytics() {
                             <SelectItem value="year">Last Year</SelectItem>
                         </SelectContent>
                     </Select>
-                    <Button 
-                        onClick={exportReport} 
-                        className="flex items-center gap-2 min-w-[140px] justify-center whitespace-nowrap"
-                    >
+                    <Badge className="bg-blue-50 text-blue-700 border-blue-100 px-3 py-1">
+                        {t('analytics.liveAnalytics')}
+                    </Badge>
+                    <Button onClick={exportReport} className="flex items-center gap-2">
                         <Download className="w-4 h-4" />
                         {t('analytics.exportReport')}
                     </Button>

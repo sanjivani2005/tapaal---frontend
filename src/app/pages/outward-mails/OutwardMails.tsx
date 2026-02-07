@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Search, Plus, Eye, Pencil, Trash2 } from 'lucide-react';
+import { Search, Plus, Eye, Pencil, Trash2, Globe } from 'lucide-react';
 import { Card } from '../../components/ui/card';
 import { Input } from '../../components/ui/input';
 import { Button } from '../../components/ui/button';
@@ -23,7 +23,7 @@ interface OutwardMailsProps {
 }
 
 export function OutwardMails({ onViewMail, onEditMail, onCreateMail }: OutwardMailsProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedPriority, setSelectedPriority] = useState('all');
   const [selectedStatus, setSelectedStatus] = useState('all');
@@ -78,13 +78,18 @@ export function OutwardMails({ onViewMail, onEditMail, onCreateMail }: OutwardMa
           <h1 className="text-2xl font-semibold text-gray-800">{t('outwardMails.title')}</h1>
           <p className="text-gray-500 text-sm mt-1">{t('outwardMails.subtitle')}</p>
         </div>
-        <Button 
-          onClick={onCreateMail}
-          className="bg-green-600 hover:bg-green-700 text-white flex items-center gap-2"
-        >
-          <Plus className="w-4 h-4" />
-          {t('outwardMails.addOutward')}
-        </Button>
+        <div className="flex items-center gap-2">
+          <select
+            value={i18n.language}
+            onChange={(e) => i18n.changeLanguage(e.target.value)}
+            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="mr">मराठी</option>
+          </select>
+          <Globe className="w-4 h-4 text-gray-500" />
+        </div>
       </div>
 
       <Card className="p-6">
@@ -143,6 +148,12 @@ export function OutwardMails({ onViewMail, onEditMail, onCreateMail }: OutwardMa
               </SelectContent>
             </Select>
           </div>
+        </div>
+        <div className="mt-4">
+          <Button className="bg-blue-600 hover:bg-blue-700" onClick={() => onCreateMail && onCreateMail()}>
+            <Plus className="w-4 h-4 mr-2" />
+            {t('outwardMails.newMail')}
+          </Button>
         </div>
       </Card>
 

@@ -117,7 +117,6 @@
     "title": "Outward Mails",
     "subtitle": "Manage all outgoing correspondence",
     "newMail": "New Mail",
-    "addOutward": "Add Outward",
     "searchPlaceholder": "Search by ID, Subject, or Tracking...",
     "trackingId": "Tracking ID",
     "subject": "Subject",
@@ -253,78 +252,6 @@
     "latencyReport": "Processing latency has decreased by 12% over the last quarter due to optimized department routing.",
     "viewFullLatencyReport": "View full latency report"
   },
-"createDepartment": {
-  "title": "Create Department",
-  "subtitle": "Add a new department to the system",
-
-  "basicInformation": "Basic Information",
-  "departmentName": "Department Name",
-  "departmentNamePlaceholder": "Enter department name",
-  "departmentCode": "Department Code",
-  "departmentCodePlaceholder": "Enter department code",
-  "description": "Description",
-  "descriptionPlaceholder": "Enter department description",
-  "location": "Location",
-  "locationPlaceholder": "Enter department location",
-  "status": "Status",
-  "active": "Active",
-  "inactive": "Inactive",
-
-  "departmentHeadInformation": "Department Head Information",
-  "departmentHead": "Department Head",
-  "departmentHeadPlaceholder": "Enter department head name",
-  "emailAddress": "Email Address",
-  "emailPlaceholder": "Enter email address",
-  "phoneNumber": "Phone Number",
-  "phonePlaceholder": "Enter phone number",
-
-  "departmentDetails": "Department Details",
-  "employeeCount": "Employee Count",
-  "annualBudget": "Annual Budget",
-  "parentDepartment": "Parent Department",
-  "selectParentDepartment": "Select Parent Department",
-
-  "setupSummary": "Setup Summary",
-  "name": "Name",
-  "code": "Code",
-  "head": "Head",
-  "employees": "Employees",
-  "budget": "Budget",
-  "notSpecified": "Not Specified",
-
-  "createDepartment": "Create Department",
-  "required": "*",
-
-  "success": "Department created successfully!",
-  "error": "Failed to create department",
-
-  "aiWarnings": {
-    "title": "AI Conflict Detection",
-    "issuesFound": "Issue(s) Found",
-    "description": "AI detected possible conflicts with existing departments.",
-    "nameExists": "Department name already exists",
-    "codeExists": "Department code already exists",
-    "headExists": "Head already assigned",
-    "emailExists": "Email already exists",
-    "phoneExists": "Phone number already exists",
-    "locationExists": "Location already exists",
-    "nameDuplicate": "Duplicate department name detected",
-    "codeDuplicate": "Duplicate department code detected",
-    "headDuplicate": "Duplicate head detected",
-    "emailDuplicate": "Duplicate email detected",
-    "phoneDuplicate": "Duplicate phone detected",
-    "locationDuplicate": "Duplicate location detected",
-    "resolveConflicts": "Please resolve conflicts before proceeding:"
-  },
-
-  "aiSuggestions": {
-    "suggests": "AI Suggests",
-    "employees": "employees",
-    "budget": "budget",
-    "apply": "Apply"
-  }
-},
-
   "tracking": {
     "title": "Tracking Dashboard",
     "subtitle": "Track all mail activities and updates",

@@ -126,7 +126,7 @@ export function Users() {
           {/* Page Header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h1 className="text-xl font-semibold text-gray-900">{t('users.title')}</h1>
+              <h1 className="text-3xl font-bold text-gray-900 tracking-tight">{t('users.title')}</h1>
               <p className="text-gray-500 font-medium">{t('users.subtitle')}</p>
             </div>
             <Button className="bg-blue-600 hover:bg-blue-700 shadow-sm" onClick={() => setShowCreateForm(true)}>
